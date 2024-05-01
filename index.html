@@ -17,6 +17,8 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     
 
 </head>
@@ -27,16 +29,22 @@
     <header class="header">
 
         <div class="header-image">
-            <a href="#home"><img src="Images/logo.png" alt=""></a>
+            <a href="#home"><img src="Images/logo1-ed.png" alt=""></a>
         </div>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon" ></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
 
         <nav>
 
-            <a href="#home">Home</a>
-            <a href="#languages">Languages</a>
-            <a href="#roadmap">Roadmaps</a>
-            <a href="#events">Events</a>
-            <a href="#about">About</a>
+            <a href="#home" style="--i:0;">Home</a>
+            <a href="#languages" style="--i:1;">Languages</a>
+            <a href="#roadmap" style="--i:2;">Roadmaps</a>
+            <a href="#events" style="--i:3;">Events</a>
+            <a href="#about" style="--i:4;">About</a>
             
 
         </nav>
@@ -85,22 +93,22 @@
                 <h1>JavaScript</h1>
             </div>
 
-            <div class="code-card">
+            <div class="code-card hide" >
                 <img src="Images/code images/python.png" alt="python logo">
                 <h1>Python</h1>
             </div>
 
-            <div class="code-card">
+            <div class="code-card hide">
                 <img src="Images/code images/database.png" alt="SQL logo">
                 <h1>SQL</h1>
             </div>
 
-            <div class="code-card">
+            <div class="code-card hide">
                 <img src="Images/code images/c-sharp.png" alt="C# logo">
                 <h1>C#</h1>
             </div>
 
-            <div class="code-card">
+            <div class="code-card hide">
                 <img src="Images/code images/swift.png" alt="Swift logo">
                 <h1>Swift</h1>
             </div>
@@ -135,19 +143,24 @@
 
                     <p>Includes labs, tutorials, books, and challenges, progressing from basics to advanced frameworks, with an emphasis on best practices.</p>
 
+                    <p class="hidden">From basics to advanced, with best practices.</p>
+                    
+
                     <h2>View Roadmap <i class="fa-solid fa-arrow-right"></i></h2>
                 </div>
             </div>
 
             <div class="road-card">
                 <div class="road-img">
-                    <img src="Images/roadmap/backend.png" alt="Back end" style="width: 300px; height: 300px;">
+                    <img src="Images/roadmap/backend.png" alt="Back end" >
                 </div>
                 <div class="road-text" style="position: relative; top: -30px;">
 
                     <h1>Backend Web Developer</h1>
 
                     <p>Offers labs, tutorials, books, and challenges, covering databases, server-side languages, APIs, and frameworks, with a focus on scalability and security.</p>
+
+                    <p class="hidden">Covering databases, languages, and frameworks</p>
 
                     <h2>View Roadmap <i class="fa-solid fa-arrow-right"></i></h2>
                 </div>
@@ -162,6 +175,8 @@
                     <h1>Fullstack Web Developer</h1>
 
                     <p>Provides labs, tutorials, books, and challenges for frontend (HTML/CSS/JS) to backend (languages, databases, frameworks).</p>
+
+                    <p class="hidden">HTML/CSS/JS to databases and frameworks</p>
 
                     <h2>View Roadmap <i class="fa-solid fa-arrow-right"></i></h2>
                 </div>
@@ -195,15 +210,20 @@
 
                         <h4>Mark Johnson, PhD</h4>
 
-                        <p>Co-founder & Lead Developer at CodeCraft •  PhD in Computer Science • Experienced Software Engineer specializing in educational technologies.</p>
+                        <p>Co-founder & Lead Developer at CodeCraft•  PhD in Computer Science • Experienced Software Engineer specializing in educational technologies.</p>
 
-                        <p style="margin-top: 10px;"><span>April 30th '24 (Tuesday)  |  09:15 AM - 10:45 AM</span></p>
+                        <p class="hide">Experienced Software Engineer specializing in educational technologies</p>
 
+                        <span>April 30th '24 (Tuesday)  |  09:15 AM - 10:45 AM</span>
+
+                        
                     </div>
                 </div>
 
                 <div class="card-content">
-                    <p>Discover the basics of programming in our upcoming webinar. Dive into fundamental concepts, explore popular languages like Python and JavaScript, and engage in hands-on exercises. Perfect for beginners curious about software development. Join us to kickstart your coding journey.</p>
+                    <p>Discover the basics of programming in our upcoming webinar. Dive into fundamental concepts, explore popular languages like Python and JavaScript, and engage in hands-on exercises. For beginners curious about software development. Join us to kickstart your coding journey.</p>
+
+                    <h4 class="small">Discover programming basics in our webinar. Learn Python, JavaScript, and more. Hands-on exercises for beginners. Start your coding journey with us.</h4>
 
                     <h2>More Info <i class="fa-solid fa-arrow-right"></i></h2>
                 </div>
@@ -229,13 +249,16 @@
 
                         <p>Curriculum Developer at LearnAnywhere • Master's in Engineering • Experienced Curriculum Developer with expertise in online education. </p>
 
-                        <p style="margin-top: 10px;"><span>April 30th '24 (Tuesday)  |  09:15 AM - 10:45 AM</span></p>
+                        <p class="hide">Experienced Curriculum Developer with expertise in online education</p>
 
+                        <span>April 30th '24 (Tuesday)  |  09:15 AM - 10:45 AM</span>
                     </div>
                 </div>
 
                 <div class="card-content">
-                    <p>Join our Mentorship Program for Junior Developers, offering personalized guidance and support from experienced professionals. Perfect for aspiring developers seeking career advancement, the program provides one-on-one mentorship, career advice, and hands-on project guidance.Accelerate your growth in software development.</p>
+                    <p>Join our Mentorship Program for Junior Developers, offering personalized guidance and support from experienced professionals. For aspiring developers seeking career advancement, the program provides one-on-one mentorship, career advice, and hands-on project guidance.</p>
+
+                    <h4 class="small">Join our Mentorship Program for Junior Developers. Get personalized guidance from experienced professionals. Career advice and project guidance available.</h4>
 
                     <h2>More Info <i class="fa-solid fa-arrow-right"></i></h2>
                 </div>
@@ -258,6 +281,8 @@
 
                 <p>Uncover the profound dedication of our team, focused on empowering novice and intermediate coders as they stride towards coding mastery. Delve deeper into our mission and discover how we can bolster your coding journey</p>
 
+                <p class="hidden"> Explore our team's commitment to empowering coders of all levels. Learn more about our mission to support your coding journey.</p>
+
                 <h2>More Info <i class="fa-solid fa-arrow-right"></i></h2>
             </div>
         </div>
@@ -267,6 +292,12 @@
     <!-- footer -->
     
     <footer>
+        <div class="social-links-hidden">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
         <div class="foot-contain">
             <div class="foot-row">
               <div class="footer-col">
@@ -308,7 +339,27 @@
                   <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
               </div>
-            </div>
+
+              <!-- Hidden row -->
+                <div class="foot-row-h">
+                    <div class="footer-col-h">
+                        <button class="foot-btn">CodingConnect LTD. <h2>More Info <i class="fa-solid fa-arrow-right"></i></h2></button>
+
+                       
+                    </div>
+
+                    <div class="footer-col-h">
+                        <button class="foot-btn">Get Help <h2>More Info <i class="fa-solid fa-arrow-right"></i></h2></button>
+                        
+                        
+                    </div>
+
+                    <div class="footer-col-h">
+                        <button class="foot-btn">Coding Info <h2>More Info <i class="fa-solid fa-arrow-right"></i></h2></button>
+
+                        
+                    </div>
+                </div>
           </div>
 
     </footer>

@@ -704,7 +704,7 @@ footer {
 
 /* BreakPoints */
 /* xxs */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 450px) {
     body {
         position: relative;
         top: -35px;
@@ -1200,7 +1200,7 @@ footer {
 
 
 /* xs */
-@media screen and (min-width: 376px) and (max-width: 576px) { 
+@media screen and (min-width: 451px) and (max-width: 576px) { 
     body {
         position: relative;
         top: -40px;

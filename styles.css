@@ -71,6 +71,24 @@ nav a:hover::before {
     width: 100%;
 }
 
+/* Check boxes */
+
+#check{ 
+    display: none;
+}
+
+.icons{ 
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+    display: none;
+}
+
+i {
+    font-size: 2.8rem;
+    color: #fff;
+}
+
 /* Banner */
 
 .banner {
@@ -107,7 +125,6 @@ nav a:hover::before {
     align-self: center;
     grid-row: 1 / span 3;
     grid-column: 2;
-
 }
 
 .banner-img img{
@@ -115,7 +132,7 @@ nav a:hover::before {
     height: 500px;
 }
 
-button {
+button:not(.foot-btn) {
     width: 100%;
     padding: 10px;
     font-size: 1.3rem;
@@ -128,7 +145,7 @@ button {
     color: #F3EFF5;
 }
 
-button:hover {
+button:hover:not(.foot-btn) {
     background-color: hsl(85, 72%, 30%);
     cursor: pointer;
     
@@ -299,6 +316,7 @@ button:hover {
 
 .road-text h2,
 .road-text h2 i {
+    color: #333;
     font-size: 1.1rem;
     transition: all 0.2s ease-in-out;
 }
@@ -323,6 +341,14 @@ button:hover {
     margin: 30px 0px ;
 }
 
+.hidden {
+    display: none;
+}
+
+.road-text .small{
+    display: none;
+}
+
 /* Image */
 
 .road-img{
@@ -336,6 +362,12 @@ button:hover {
 .road-img img {
     width: 250px;
     height: 270px;
+    margin: 0 auto;
+}
+
+.road-card:nth-child(2) .road-img img {
+    width: 300px;
+    height: 300px;
 }
 
 
@@ -389,8 +421,11 @@ button:hover {
     margin: 20px;
     background-color: hsl(280, 23%, 90%);
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-    
+    border-radius: 20px;   
+}
+
+.event-card .hide{
+    display: none;
 }
 
 /* top */
@@ -425,9 +460,14 @@ button:hover {
     margin: 10px 0;
 }
 
+.card-head p {
+    margin-bottom: 20px;
+}
+
 .card-head span { 
     color: #72B01D;
 }
+
 
 .card-img button {
     width: 100%;
@@ -441,6 +481,10 @@ button:hover {
 
 .card-content{
     padding: 20px;
+}
+
+.small{
+    display: none;
 }
 
 .card-content h2,
@@ -458,6 +502,7 @@ button:hover {
 
 .card-content h2 i {
     margin-left: 5px;
+    color: #454955;
 }
 
 .card-content h2:hover i {
@@ -536,6 +581,7 @@ button:hover {
 .about-text h2,
 .about-text h2 i {
     margin-top: 15px;
+    color: #333;
     font-size: 1.2rem;
     transition: all 0.2s ease-in-out;
 }
@@ -571,6 +617,14 @@ footer {
 .foot-row{ 
   display: flex;
   flex-wrap: wrap;
+}
+
+.foot-row-h{
+    display: none;
+}
+
+.social-links-hidden {
+    display: none;
 }
 
 .footer-col li{
@@ -646,3 +700,1784 @@ footer {
   font-size: 1.5rem;
 }
 
+
+
+/* BreakPoints */
+
+/* xs */
+@media screen and (max-width: 576px) { 
+    body {
+        position: relative;
+        top: -40px;
+        margin-bottom: -40px;
+    }
+    /* Header */
+    .header{
+        height: 50px;
+        position: fixed;
+        top: 0;
+    }
+
+    .header-image{
+        position: absolute;
+        left: 35%;
+    }
+
+    .header-image img{
+        width: 65%;
+    }
+    
+    /* navbar */
+
+    
+    .icons{ 
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon{ 
+        display: none;
+    }
+
+    .icons #close-icon{ 
+        display: none;
+    }
+    
+
+    #check:checked~.icons #close-icon{ 
+        display: block;
+    }
+
+    nav{ 
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        width: 100%;
+        height: 0%;
+        background: #454955;
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+
+    #check:checked~ nav{
+        height: 14.5rem;
+    }
+       
+    
+    nav a{ 
+        display: block;
+        margin: 1.3rem 0;
+        font-size: 0.90rem;
+        text-align: center;
+        transform: translateY(-50px) ;
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+    nav a:hover {
+        color: hsl(85, 72%, 60%);
+    }
+
+    nav a::before{
+        display: none;
+    }
+
+    #check:checked~ nav a{
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(0.10s * var(--i));
+    }
+
+    /* Banner */
+    .banner-text {
+        width: 90%;
+        padding: 10px;
+    }
+    
+    .banner-text h1 {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .banner-text p {
+        display: none;
+    }
+    
+    .banner-text button {
+        font-size: 0.80rem;
+        max-width: 80%;
+        padding: 7px;
+    }
+    
+     .banner-img img {
+        max-width: 65%;
+        margin-left: 40px;
+        height: auto;
+    }
+    
+    /* code */
+    
+    .code {
+        height: 45%;
+        padding-bottom: 2px;
+    }
+    
+    .code-head h1 {
+        font-size: 1rem;
+        top: 15px;
+    }
+    
+    .code-container{
+        width: 100%;
+        margin-top: -60px;
+        padding: 20px;
+        height: 100%;
+    }
+    
+    .code-card {
+        height: 48px;
+        width: 190px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    
+    .hide {
+        display: none;
+    }
+
+    .code-card img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .code-card h1 {
+        font-size: 0.80rem;
+    }
+    
+    .code-card h1 i {
+        font-size: 0.80rem;
+    }
+    
+    
+    /* roadmap */
+    .road-head{
+        margin: 30px 105px;
+    
+    }
+    .road-head h1 {
+        font-size: 1rem;
+    }
+
+    .road-head p{
+        display: none;
+    }
+    
+    .road-container {
+        padding: 20px;
+        margin: -20px auto;
+        flex-direction: column;
+    }
+    
+    .road-card {
+        height: 200px;
+        width: 350px;
+        display: inline-flex;
+        background-image: none;
+        background-image: linear-gradient(to right,#F3EFF5 40%, #72B01D 70%, #3F7D20);
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+    }
+    
+    .road-card:nth-child(2) .road-text {
+        padding-top: 50px;
+    }
+    
+    
+    .road-img {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .road-img img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .road-card:nth-child(2) .road-img img {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .road-text {
+        margin-top: -30px;
+    }
+    
+    .road-text h1 {
+        margin-top: 30px;
+        font-size: 0.85rem;
+        margin-bottom: -10px;
+    }
+    
+    .road-text p:not(.hidden) {
+        display: none;
+    }
+
+    .hidden{
+        display: block;
+        font-size: 0.80rem;
+    }
+    
+    
+    .road-container .road-card .road-text h2{
+        margin-top: -10px;
+        height: 100px;
+        font-size: 0.80rem;
+    }
+    
+    /* events */
+    .events {
+        min-height: 180vh;
+        height: auto;
+        position: relative;
+        margin-top: 600px;
+        margin-bottom: -300px;
+    }
+    
+    .event-head{
+        height: 80px;
+    }
+    
+    .event-head h1{ 
+        font-size: 1rem;
+    }
+    
+    .event-container{
+        height: 67%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: -60px;
+    }
+    
+    .event-card {
+        height: 350px;
+        width: 75%;
+    }
+    
+    .card-img{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card-img img {
+        width: 70px;
+        margin: 0 auto;
+    }
+    
+    .card-img button {
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+    
+    .card-head { 
+        height: 50%;
+    }
+
+    .card-head h2{
+        font-size: 0.90rem;
+    }
+
+    .card-head h4{
+        font-size: 0.90rem;
+    }
+    
+    
+    .card-head p {
+        display: none;
+    }
+
+    .event-card .hide{
+        display: block;
+        font-size: 0.85rem;
+        height: 80px;
+    }
+    
+    .card-head span{
+        font-size: 0.85rem;
+        
+        margin-top: 100px;
+        width: 100%;
+    }
+    
+    .card-content {
+        margin-top: -20px;
+    }
+    
+    .small{
+        display: none;
+    }
+    
+    .card-content p {
+        display: none;
+    }
+    
+    .card-content h2 {
+        font-size: 0.80rem;
+        margin-top: 105px;
+    }
+    
+    /* About */
+    .about {
+        height: auto;
+        min-height: 100px;
+    }
+    
+    .about-container {
+        margin-top: -20px;
+    }
+    
+    .about-img{
+        display: flex;
+        align-content: center;
+        margin-top: 20px;
+    }
+    
+    .about-img img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .about-text h1 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+    
+    .about-text p:not(.hidden) {
+        display: none;
+    }
+
+    .about-text .hidden{
+        display: none;
+    }
+
+    
+    
+    .about-text h2,
+    .about-text h2 i {
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+    
+    /* footer */
+    
+    /* Old Footer */
+    footer {
+       padding: 20px 0;
+       height: 28vw;
+    }
+    
+    .footer-col h4 {
+        display: none;
+    }
+    
+    .footer-col ul li a {
+        display: none;
+    }
+    
+    .footer-col .social-links a i {
+        display: none;
+    }
+    
+     /* new footer */
+
+     footer {
+        height: 200px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-bottom: -30px;
+     }
+
+    .foot-row-h{ 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 10px;
+    justify-content: space-between;
+    margin-left: -60px;
+  }
+  
+  .social-links-hidden {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #F3EFF5;
+      height: 70px;
+      margin-top: -20px;
+      margin-bottom: 10px;
+  }
+
+  .social-links-hidden a i {
+    font-size: 1.5rem;
+    color: #F3EFF5;
+    margin-right: 25px;
+    margin-left: 25px;
+    height: 45px;
+    border-radius: 50%;
+    width: 45px;
+    background-color: #454955;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .social-links-hidden a i:hover {
+    background-color: #F3EFF5;
+    color: #454955;
+  }
+  
+  .footer-col-h li{
+    list-style: none ;
+  }
+  
+  .footer-col-h{ 
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  .foot-btn{
+    width: 200px;
+    background-color: transparent;
+    color: #F3EFF5;
+    border: none;
+    cursor: pointer;
+  }
+
+  .foot-btn button {
+    font-size: 0.80rem;
+  }
+
+  .foot-btn h2{
+    color: #F3EFF5;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    margin-left: 5px;
+    font-size: 0.75rem;
+  }
+
+  .foot-btn h2 i {
+    font-size: 0.80rem;
+    margin-left: 5px;
+  }
+
+  .foot-btn:active h2 {
+    padding-left: 15px;
+  }
+
+  
+  .footer-col-h ul li:not(:last-child){
+    margin-bottom: 10px;
+  }
+  
+  .footer-col-h ul li a{
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: #bbbbbb;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-col-h ul li a:hover{
+    color: #F3EFF5;
+    padding-left: 8px;
+  }
+
+    
+}
+
+
+/* sm */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    /* Whole page */
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        position: relative;
+        top: -30px;
+    }
+
+    /* Header */
+    .header{
+        height: 60px;
+        position: fixed;
+        top: 0;
+    }
+
+    .header-image{
+        position: absolute;
+        left: 35%;
+    }
+
+    .header-image img{
+        width: 75%;
+    }
+    
+    /* navbar */
+
+    
+    .icons{ 
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon{ 
+        display: none;
+    }
+
+    .icons #close-icon{ 
+        display: none;
+    }
+    
+
+    #check:checked~.icons #close-icon{ 
+        display: block;
+    }
+
+    nav{ 
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        width: 100%;
+        height: 0%;
+        background: #454955;
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+
+    #check:checked~ nav{
+        height: 14.5rem;
+    }
+       
+    
+    nav a{ 
+        display: block;
+        margin: 1.3rem 0;
+        font-size: 0.90rem;
+        text-align: center;
+        transform: translateY(-50px) ;
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+    nav a:hover {
+        color: hsl(85, 72%, 60%);
+    }
+
+    nav a::before{
+        display: none;
+    }
+
+    #check:checked~ nav a{
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(0.10s * var(--i));
+    }
+    
+    /* Banner */
+    .banner-text {
+        width: 90%;
+        padding: 10px;
+    }
+    
+    .banner-text h1 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .banner-text p {
+        display: none;
+    }
+    
+    .banner-text button {
+        font-size: 0.95rem;
+        max-width: 80%;
+        padding: 7px;
+    }
+    
+     .banner-img img {
+        max-width: 65%;
+        margin-left: 60px;
+        height: auto;
+    }
+    
+    /* code */
+    
+    .code {
+        height: 45%;
+        padding-bottom: 2px;
+    }
+    
+    .code-head h1 {
+        font-size: 1.05rem;
+        top: 15px;
+    }
+    
+    .code-container{
+        width: 100%;
+        margin-top: -40px;
+        padding: 20px;
+        height: 100%;
+    }
+    
+    .code-card {
+        height: 60px;
+        width: 280px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    
+    .code-container .hide {
+        display: none;
+    }
+
+    .code-card img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .code-card h1 {
+        font-size: 1rem;
+    }
+    
+    .code-card h1 i {
+        font-size: 1rem;
+    }
+    
+    
+    /* roadmap */
+    .road-head{
+        margin: 30px 105px;
+    
+    }
+    .road-head h1 {
+        font-size: 1.05rem;
+    }
+
+    .road-head p{
+        display: none;
+    }
+    
+    .road-container {
+        padding: 20px;
+        margin: -20px auto;
+        flex-direction: column;
+    }
+    
+    .road-card {
+        height: 200px;
+        width: 500px;
+        display: inline-flex;
+        background-image: none;
+        background-image: linear-gradient(to right,#F3EFF5 40%, #72B01D 70%, #3F7D20);
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .road-card:nth-child(2) .road-text {
+        padding-top: 50px;
+    }
+    
+    
+    .road-img {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .road-img img {
+        width: 150px;
+        height: 170px;
+    }
+    
+    .road-card:nth-child(2) .road-img img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .road-text {
+        margin-top: -20px;
+    }
+    
+    .road-text h1 {
+        margin-top: 30px;
+        font-size: 1.1rem;
+        margin-bottom: -10px;
+    }
+    
+    .road-text p:not(.hidden) {
+        display: none;
+    }
+
+    .hidden{
+        display: block;
+    }
+    
+    
+    .road-container .road-card .road-text h2{
+        margin-top: -10px;
+        height: 100px;
+    }
+    
+    /* events */
+    .events {
+        min-height: 180vh;
+        height: auto;
+        position: relative;
+        margin-top: 500px;
+    }
+    
+    .event-head{
+        height: 80px;
+    }
+    
+    .event-head h1{ 
+        font-size: 1.05rem;
+    }
+    
+    .event-container{
+        height: 67%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: -60px;
+    }
+    
+    .event-card {
+        height: 350px;
+        width: 70%;
+    }
+    
+    .card-img{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card-img img {
+        width: 100px;
+        margin: 0 auto;
+    }
+    
+    .card-img button {
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+    
+    .card-head { 
+        height: 50%;
+    }
+    
+    
+    .card-head p {
+        height: 85px;
+        font-size: 0.90rem;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    
+    .card-head span{
+        font-size: 0.90rem;
+        margin-left: 0px;
+        margin-top: 100px;
+    }
+    
+    .card-content {
+        margin-top: -20px;
+    }
+    
+    .small{
+        display: none;
+    }
+    
+    .card-content p {
+        display: none;
+    }
+    
+    .card-content h2 {
+        font-size: 0.95rem;
+        margin-top: 105px;
+    }
+    
+    /* About */
+    .about {
+        height: auto;
+        min-height: 300px;
+    }
+    
+    .about-container {
+        margin-top: -20px;
+    }
+    
+    .about-img{
+        display: flex;
+        align-content: center;
+        margin-top: 30px;
+    }
+    
+    .about-img img {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .about-text h1 {
+        font-size: 1.05rem;
+    }
+    
+    .about-text p:not(.hidden) {
+        display: none;
+    }
+
+    .about-text .hidden{
+        font-size: 0.90rem;
+    }
+
+    
+    
+    .about-text h2,
+    .about-text h2 i {
+        margin-top: -6px;
+        font-size: 1rem;
+    }
+    
+    /* footer */
+    
+    /* Old Footer */
+    footer {
+       padding: 20px 0;
+       height: 28vw;
+    }
+    
+    .footer-col h4 {
+        display: none;
+    }
+    
+    .footer-col ul li a {
+        display: none;
+    }
+    
+    .footer-col .social-links a i {
+        display: none;
+    }
+    
+     /* new footer */
+
+     footer {
+        height: 200px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-bottom: -30px;
+     }
+
+    .foot-row-h{ 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 10px;
+    justify-content: space-between;
+    margin-left: -30px;
+  }
+  
+  .social-links-hidden {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #F3EFF5;
+      height: 70px;
+      margin-top: -20px;
+      margin-bottom: 10px;
+  }
+
+  .social-links-hidden a i {
+    font-size: 1.5rem;
+    color: #F3EFF5;
+    margin-right: 25px;
+    margin-left: 25px;
+    height: 45px;
+    border-radius: 50%;
+    width: 45px;
+    background-color: #454955;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .social-links-hidden a i:hover {
+    background-color: #F3EFF5;
+    color: #454955;
+  }
+  
+  .footer-col-h li{
+    list-style: none ;
+  }
+  
+  .footer-col-h{ 
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  .foot-btn{
+    width: 200px;
+    background-color: transparent;
+    color: #F3EFF5;
+    border: none;
+    cursor: pointer;
+  }
+
+  .foot-btn button {
+    font-size: 0.90rem;
+  }
+
+  .foot-btn h2{
+    color: #F3EFF5;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    font-size: 0.85rem;
+  }
+
+  .foot-btn h2 i {
+    font-size: 0.80rem;
+    margin-left: 5px;
+  }
+
+  .foot-btn:active h2 {
+    padding-left: 15px;
+  }
+
+  
+  .footer-col-h ul li:not(:last-child){
+    margin-bottom: 10px;
+  }
+  
+  .footer-col-h ul li a{
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: #bbbbbb;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-col-h ul li a:hover{
+    color: #F3EFF5;
+    padding-left: 8px;
+  }
+
+    
+    
+    
+ }
+
+
+/* md */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+/* navbar */
+
+.icons{ 
+    display: inline-flex;
+}
+
+#check:checked~.icons #menu-icon{ 
+    display: none;
+}
+
+.icons #close-icon{ 
+    display: none;
+}
+
+
+#check:checked~.icons #close-icon{ 
+    display: block;
+}
+
+nav{ 
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    height: 0%;
+    background: #454955;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+#check:checked~ nav{
+    height: 16rem;
+}
+   
+
+nav a{ 
+    display: block;
+    margin: 1.3rem 0;
+    font-size: 1.1rem;
+    text-align: center;
+    transform: translateY(-50px) ;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: hsl(85, 72%, 60%);
+}
+
+nav a::before{
+    display: none;
+}
+
+#check:checked~ nav a{
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(0.10s * var(--i));
+}
+   
+
+/* banner */
+.banner-text {
+    width: 90%;
+    padding: 10px;
+}
+
+.banner-text h1 {
+    font-size: 1.8rem;
+}
+
+.banner-text p {
+    font-size: 1rem;
+}
+
+.banner-text button {
+    font-size: 1rem;
+    padding: 7px;
+}
+
+ .banner-img img {
+    max-width: 78%;
+    margin-left: 60px;
+    height: auto;
+}
+
+/* code */
+
+.code {
+    height: 45%;
+    padding-bottom: 2px;
+}
+
+.code-head h1 {
+    font-size: 1.2rem;
+    top: 15px;
+}
+
+.code-container{
+    width: 100%;
+    margin-top: -40px;
+    padding: 20px;
+    height: 100%;
+}
+
+.code-card {
+    height: 60px;
+    width: 280px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.code-card img {
+    width: 35px;
+    height: 35px;
+}
+
+.code-card h1 {
+    font-size: 1rem;
+}
+
+.code-card h1 i {
+    font-size: 1rem;
+}
+
+
+/* roadmap */
+.road-head{
+    margin: 30px 105px;
+
+}
+.road-head h1 {
+    font-size: 1.2rem;
+}
+
+.road-container {
+    padding: 20px;
+    margin: -20px auto;
+    flex-direction: column;
+}
+
+.road-card {
+    height: 300px;
+    width: 600px;
+    display: inline-flex;
+    background-image: none;
+    background-image: linear-gradient(to right,#F3EFF5 40%, #72B01D 70%, #3F7D20);
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.road-card:nth-child(2) .road-text {
+    padding-top: 50px;
+}
+
+
+.road-img {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.road-img img {
+    width: 240px;
+    height: 260px
+}
+
+.road-card:nth-child(2) .road-img img {
+    width: 250px;
+    height: 250px;
+}
+
+.road-text {
+    margin-top: -20px;
+}
+
+.road-text h1 {
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+
+.road-text p {
+    height: 100px;
+    margin: 20px 0px;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+
+.road-container .road-card .road-text h2{
+    margin-top: 65px;
+    height: 150px;
+}
+
+/* events */
+.events {
+    min-height: 180vh;
+    height: auto;
+    position: relative;
+    margin-top: 860px;
+}
+
+.event-head{
+    height: 80px;
+}
+
+.event-head h1{ 
+    font-size: 1.2rem;
+}
+
+.event-container{
+    height: 67%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: -60px;
+}
+
+.event-card {
+    height: 320px;
+    width: 90%;
+}
+
+.card-img{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img img {
+    width: 100px;
+    margin: 0 auto;
+}
+
+.card-img button {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.card-head { 
+    height: 50%;
+}
+
+
+.card-head p {
+    height: 35px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.card-head span{
+    margin-left: 0px;
+    margin-top: -70px;
+}
+
+.card-content {
+    margin-top: -20px;
+}
+
+.small{
+    display: block;
+    margin-top: 35px;
+    width: 100%;
+    font-weight: normal;
+}
+
+.card-content p {
+    display: none;
+}
+
+.card-content h2 {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* About */
+.about {
+    height: auto;
+    min-height: 300px;
+}
+
+.about-container {
+    margin-top: -20px;
+}
+
+.about-img{
+    display: flex;
+    align-content: center;
+    margin-top: 30px;
+}
+
+.about-img img {
+    width: 220px;
+    height: 220px;
+}
+
+.about-text h1 {
+    font-size: 1.2rem;
+}
+
+.about-text p {
+    margin: 30px 0px;
+    font-size: 1rem;
+}
+
+.about-text h2,
+.about-text h2 i {
+    margin-top: -6px;
+    font-size: 1rem;
+}
+
+/* footer */
+
+/* Old Footer */
+footer {
+   padding: 20px 0;
+   height: 28vw;
+}
+
+.footer-col h4 {
+    display: none;
+}
+
+.footer-col ul li a {
+    display: none;
+}
+
+.footer-col .social-links a i {
+    display: none;
+}
+
+/* new footer */
+
+.foot-row-h{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  
+  .social-links-hidden {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #F3EFF5;
+      height: 90px;
+      margin-top: -20px;
+      margin-bottom: 10px;
+  }
+
+  .social-links-hidden a i {
+    font-size: 2rem;
+    color: #F3EFF5;
+    margin-right: 25px;
+    margin-left: 25px;
+    height: 65px;
+    border-radius: 50%;
+    width: 65px;
+    background-color: #454955;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .social-links-hidden a i:hover {
+    background-color: #F3EFF5;
+    color: #454955;
+  }
+  
+  .footer-col-h li{
+    list-style: none ;
+  }
+  
+  .footer-col-h{ 
+    width: 25%;
+    padding: 0 15px;
+  }
+
+  .foot-btn{
+    font-size: 1rem;
+    width: 180px;
+    background-color: transparent;
+    color: #F3EFF5;
+    border: none;
+    cursor: pointer;
+  }
+
+  .foot-btn h2{
+    color: #F3EFF5;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+  }
+
+  .foot-btn h2 i {
+    font-size: 1rem;
+    margin-left: 5px;
+  }
+
+  .foot-btn:active h2 {
+    padding-left: 15px;
+  }
+
+  
+  .footer-col-h ul li:not(:last-child){
+    margin-bottom: 10px;
+  }
+  
+  .footer-col-h ul li a{
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: #bbbbbb;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-col-h ul li a:hover{
+    color: #F3EFF5;
+    padding-left: 8px;
+  }
+
+
+
+
+
+} 
+
+
+
+
+/* lg */
+@media screen and (min-width: 993px) and (max-width: 1200px) { 
+    
+    /* banner */
+    .banner-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .banner-text p {
+        font-size: 1rem;
+    }
+
+    .banner-text button {
+        font-size: 1.1rem;
+    }
+
+     .banner-img img {
+        max-width: 78%;
+        margin-left: 60px;
+        height: auto;
+    }
+
+    /* code */
+
+    .code {
+        height: 28vw;
+    }
+
+    .code-head h1 {
+        font-size: 1.35rem;
+        top: 30px;
+    }
+
+    .code-container{
+        width: 92%;
+        margin: 0 auto;
+        
+    }
+
+    .code-card {
+        height: 60px;
+        width: 200px;
+    }
+
+    .code-card img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .code-card h1 {
+        font-size: 1rem;
+    }
+
+    .code-card h1 i {
+        font-size: 1rem;
+    }
+
+    
+    /* roadmap */
+    .road-card {
+        height: 500px;
+    }
+
+    .road-head{
+        margin: 30px 105px;
+    }
+    .road-head h1 {
+        font-size: 1.35rem;
+    }
+
+    .road-container {
+        padding: 20px;
+        margin: -20px auto;
+    }
+    
+    .road-img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .road-img img {
+        width: 200px;
+        height: 220px
+    }
+
+    .road-card:nth-child(2) .road-img img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .road-text {
+        margin-top: -20px;
+    }
+
+    .road-text h1 {
+        font-size: 1.1rem;
+    }
+
+    .road-text p {
+        height: 100px;
+        margin: 20px 0px;
+        position: relative;
+        font-size: 0.95rem;
+    }
+    
+    .road-container .road-card .road-text h2{
+        margin-top: 65px;
+        height: 150px;
+    }
+
+    /* events */
+    .events {
+        margin-top: 200px;
+        height: 80vw;
+        position: relative;
+    }
+
+    .event-head{
+        height: 80px;
+    }
+
+    .event-head h1{ 
+        font-size: 1.35rem;
+    }
+
+    .event-container{
+        height: 67%;
+    }
+
+    .event-card {
+        height: 550px;
+    }
+
+    .card-img img {
+        width: 100px;
+    }
+
+    .card-img button {
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+
+    .card-head { 
+        height: 50%;
+    }
+
+    .card-head h2 {
+        font-size: 1.1rem;
+    }
+
+    .card-head p {
+        height: 100px;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .card-head span{
+        margin-left: -105px;
+    }
+
+    .card-content {
+        margin-top: -20px;
+    }
+
+    .card-content p {
+        height: 140px;
+    }
+
+    .card-content h2 {
+        font-size: 1.1rem;
+        margin-top: 40px;
+    }
+
+    /* About */
+    .about {
+        height: 27vw;
+    }
+
+    .about-container {
+        margin-top: -20px;
+    }
+
+    .about-img img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .about-text h1 {
+        font-size: 1.35rem;
+    }
+
+    .about-text p {
+        margin: 20px 0px;
+        font-size: 1rem;
+    }
+
+    .about-text h2,
+    .about-text h2 i {
+        margin-top: -6px;
+        font-size: 1.1rem;
+    }
+
+    /* footer */
+    footer {
+       padding: 20px 0;
+       height: 28vw;
+    }
+
+
+    .footer-col h4 {
+        font-size: 1rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 0.95rem;
+    }
+
+    .footer-col .social-links a i {
+        font-size: 1.35rem;
+        height: 35px;
+        width: 35px;
+    }
+
+} 
+
+
+/* xl */
+@media screen and (min-width: 1201px) and (max-width: 1400px) { 
+    /* banner */
+    .banner-img img {
+        max-width: 95%;
+        height: auto;
+    }
+
+    /* code */
+
+    .code-container{
+        width: 95%;
+        margin: 0 auto;
+        
+    }
+
+    .code-card {
+        width: 250px;
+    }
+
+    .code-card img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .code-card h1 {
+        font-size: 1.1rem;
+    }
+
+    .code-card h1 i {
+        font-size: 1.1rem;
+    }
+
+
+    /* roadmap */
+
+
+    
+    .road-img {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .road-text {
+        margin-top: -20px;
+    }
+
+    .road-text p {
+        height: 100px;
+        margin: 20px 0px;
+        position: relative;
+    }
+    
+    .road-container .road-card .road-text h2{
+        margin-top: 40px;
+        height: 150px;
+    }
+
+    /* events */
+    .card-img button {
+        margin-top: 10px;
+    }
+
+    .event-head{
+        height: 80px;
+    }
+
+    .card-head p {
+        height: 75px;
+        
+    }
+
+    .card-content {
+        margin-top: -20px;
+    }
+
+    .card-content p {
+        height: 140px;
+    }
+
+    .event-container{
+        height: 67%;
+    }
+
+    .events {
+        margin-top: 150px;
+        height: 70vw;
+        position: relative;
+    }
+
+    .event-card {
+        height: 550px;
+    }
+
+
+    .card-head { 
+        height: 50%;
+
+    }
+
+    .card-head p{
+        margin-bottom: 30px;
+    }
+   
+
+
+    /* About */
+
+    .about-img img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .about-text p {
+        margin: 20px 0px;
+    }
+
+    .about-text h2,
+    .about-text h2 i {
+        margin-top: -6px;
+    }
+
+    /* footer */
+    footer {
+       padding: 20px 0;
+    }
+
+    .footer-col h4 {
+        font-size: 1.15rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 1rem;
+    }
+
+}
+
+/* xxl */
+@media screen and (min-width: 1401px) {
+    
+}
